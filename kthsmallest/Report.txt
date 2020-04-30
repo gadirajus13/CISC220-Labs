@@ -1,0 +1,6 @@
+// Sohan Gadiraju
+My design for this program closely follows QuickSort in its recursive calls. Primarily, I begin by creating a partition
+in the array and this becomes the source for all my cases. My base case consists of checking whether the pivot element in the array
+is in the same position as k or not.If the pivot is in the same position as k, that means we found the number we are looking for.
+The first recursive call checks the left subarray while the second recursive call checks the right subarray. By doing this, the 
+kthsmallest function is very similar to QuickSort.

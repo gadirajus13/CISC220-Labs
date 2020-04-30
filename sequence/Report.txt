@@ -1,0 +1,16 @@
+Nicholas Fafel and Sohan Gadiraju
+A) The order would be [0,1,2,3,4] because the numbers are strictly increasing
+B) The order would be [4,3,2,1,0] because the numbers are strictly decreasing
+C) Initially, we take in the values of the sequence and check if the char given is 'n', '+', or a '-'.
+    the first for loop checks the string and breaks into pieces and then puts it into a vector while 
+    adding a number to the deque everytime it does. Then we use a second for loop to check the value at 
+    a given position in the vector starting from the end and tracking back to the beginning. If the given
+    char is a '-', the loop pushes the smallest value in the deque to the front of the list; if the given
+    char is a '+' or 'n', the loop pushes the largest remaining value to the front of the list. Then we print
+    out the solution with another for loop. The time complexity of this solution would be O(n) because we use 
+    one for loop to determine the order of the values in the solution list. Since that given for loop only
+    contains an if/else statement which has a time complexity of O(1), our solution would have a time complexity
+    of O(n). We chose to use a deque because for our purpose we only had to pull numbers from the front or the
+    end,therefore it was the most efficient data structure. Additionally, we chose to use a list because we are
+    pushing all the values to the front, without needing to change each value like we would have had to do if
+    we used an array. 

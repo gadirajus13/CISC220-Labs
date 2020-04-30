@@ -1,0 +1,26 @@
+// Report by Sohan Gadiraju //
+
+My design is a simple design using if statements to calculate the median under different scenarios. Initially I declared a min heap
+and a max heap in order to keep track of all the numbers in order and sort them based on their relation to the current median. I also
+created a counter in order to track if the list of numbers was at an odd or even number, because if it was even I would have to return two numbers.
+My entire function was encased in a while loop to make the program continus as per the directions.
+
+The first condition I test in my while loop is if the number entered is the first number, because in this case that number becomes the median.
+This if statement has a constant time complexity because it only uses simple asigning of variables.Then I check if the number entered is the second number.
+If it is the second number, and if the current number entered is greater than the median, the current number gets added to the min heap and the
+current median gets added to the max heap. This helps set up the sorting of the numbers based on their relationship to the heaps. If the current number
+is less than the median, the current number gets added to the max heap and the median gets added to the min heap. I did this because I want all the larger numbers 
+(relative to the current median) to be in the min heap and all the smaller numbers in the max heap. Inserting these numbers into either the min heap or the max
+heap takes a time complexity of O(logn) because they both are like Binary Search Trees.
+
+The next condition I tested is if the number entered is the third number entered or higher and if the size of the list of numbers is odd. If the size
+of the list of numbers is odd and the number entered is greater than the current median, the median is the number currently at the top of the min heap
+and then the new number is added to the min heap. If the number is less than the current median, the same is true but with the max heap instead. This entire
+if statement also has a complexity of O(logN) because the only function not operating in constant time complexity is the insertion and extraction of the numbers 
+in the heaps, and this has a time complexity of O(logN).
+
+Lastly, I tested to see if the number entered is the third number entered or higher and if the size of the list of numbers is odd. In this condition, if k was greater than
+the current median, I had to move the top of the current min heap to the max heap in order to keep both heaps balanced and then returned the top of both heaps before the removal.
+If the k was less than the current median, I moved the top of the max heap to the min hepa in order to keep both heaps balanced and returned the top of both heaps or in other words
+the least of the biggest and the greatest of the smallest. This entire condition also operates at O(logN) time complexity because once again the only 
+statements not of constant time comlexity or the insertion and extraction of numbers in a heap.

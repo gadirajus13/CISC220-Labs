@@ -1,0 +1,27 @@
+My desing is a simple compariosn design that will always operate at a time complexity of O(1). First, I'll 
+begin by explaining my header file. My header file contains my minStack class, whihc is an extension of the
+STL stack. The class contains a definition for two integer stacks and an integer to store the min while
+containg three public functions, push(), pop(), and findMin(), respectively. Next, we move on to the c++ file
+with my actual functions. 
+
+The first function I created was a modified push function. The modified push function
+still only takes in one integer as a parameter, however it compares every integer entered to the existing min.
+For the first time push() is called, it sets the first number as the min and pushes it to s1 (which i will refer 
+to as stack 1). However, the function also will push this number to stack 2 (s2) which will be used to keep track of
+all the numbers which have been a min at any point in order. After the first number is entered, if another number
+is pushed, the push function will check whether the new number is less than the min or not, and if it is the number is
+pushed into both stack 1 and stack 2. If it is not, it is only pushed into stack 1. This function has a 
+time complexity of O(1) because it only consists of if, else statements which have a constant time complexity.
+
+The next function I made was the modified pop function. The pop function contains an int t which stores the top number of
+the stack which will be removed. This allows us to compare the number that was removed from stack 1 to the min. If
+t is equal to the min, then we have to remove the top number form s2 because that number is the current min and is at the top
+of s2, since s2 only stores mins and the current min will always be at the top. Then we set the new top of s2 to be the min
+because that number was the min before the min that was just removed was added. This funciton also has a worst-case time
+complexity of O(1) because it only contains constant time statements.
+
+Lastly, my findMin fucntion contains a very simple if else statement to test whhether the 
+stack is empty or not. If the stack is empty, the funciton displays that the stack is empty and returns
+o and if the stack is not empty it returns the min. Therefore, this function also has a time complexity of O(1).
+
+The main function serves to just take in input and display the min when asked to.
